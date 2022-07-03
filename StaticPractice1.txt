@@ -35,7 +35,7 @@ public with sharing class StaticPractice1 {
      
         System.debug('i am non Static Method1 and call from Static method');
         Static_Method();                                   // call for static method (No Error) we can Access static method from non static method
-		System.debug('test');
+		System.debug('test 2');
 
     }
 
