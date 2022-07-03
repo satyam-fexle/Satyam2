@@ -10,7 +10,7 @@ public with sharing class StaticPractice1 {
     }
     public void non_StaticMethod(){                  // Create a non Static method
 
-        System.debug('@@@ i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
+        System.debug('@@@## i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
 		System.debug();
 
         
