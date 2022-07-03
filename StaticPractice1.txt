@@ -6,13 +6,14 @@ public with sharing class StaticPractice1 {
       s=100;
     }
     {
-      i=10;
+      i=100;
     }
     public void non_StaticMethod(){                  // Create a non Static method
 
-        System.debug('i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
+        System.debug('@@@ i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
+		System.debug();
 
-        System.debug('Sum is::'+(s+i));              // output---> 110
+        
     }
 
     public static  void Static_Method(){                     // Create a static method
