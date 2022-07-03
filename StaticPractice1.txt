@@ -1,0 +1,56 @@
+public with sharing class StaticPractice1 {
+    Private Integer i;                                     // Create a non static variable
+    Private static Integer s;                              // Create a Static Variable
+    static                                                 // Static block
+    {
+      s=100;
+    }
+    {
+      i=10;
+    }
+    public void non_StaticMethod(){                  // Create a non Static method
+
+        System.debug('i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
+
+        System.debug('Sum is::'+(s+i));              // output---> 110
+    }
+
+    public static  void Static_Method(){                     // Create a static method
+
+        System.debug('i am Static Method and Access non static variable');
+
+      //  System.debug('Multiply is::'+(s*i));     Error Because Static method can not be access non static variable
+         
+      StaticPractice1 obj = new StaticPractice1();   // First create a object then Access non static variable..
+
+     // System.debug('Multiply is::'+(s*i));          // Again Error....Here non static variable can not be access Direct( Complie time Error)
+
+     // Access method is static method to non static variable is ( (object.variable name))
+
+     System.debug('Multiply is::'+(s*obj.i));        // No error    output is----> 1000
+    }
+
+    public void non_StaticMethod1(){
+     
+        System.debug('i am non Static Method1 and call from Static method');
+        Static_Method();                                   // call for static method (No Error) we can Access static method from non static method
+
+    }
+
+    public static void Static_Method1(){
+     
+        System.debug('i am  Static_Method1 and call from non Static method');
+
+        // non_StaticMethod1();    Compile time Error (we can not be directlly call static method to non static method)
+        
+        // first create a object
+
+        StaticPractice1 obj = new StaticPractice1();      // Create a object
+
+         // Accesss method static method to non static method   (object.Method Name)
+         
+       obj.non_StaticMethod();                         // No error its work   
+                                                     
+       obj.non_StaticMethod1();
+    }
+}
