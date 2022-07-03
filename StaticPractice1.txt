@@ -6,18 +6,19 @@ public with sharing class StaticPractice1 {
       s=100;
     }
     {
-      i=10;
+      i=100;
     }
     public void non_StaticMethod(){                  // Create a non Static method
 
-        System.debug('i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
+        System.debug('@@@## i am Non Static Method and Access Static variable');      // Non Static method Access Static and non Static variables
+		System.debug();
 
-        System.debug('Sum is::'+(s+i));              // output---> 110
+        
     }
 
     public static  void Static_Method(){                     // Create a static method
 
-        System.debug('i am Static Method and Access non static variable');
+        System.debug(' @@@i am Static Method and Access non static variable');
 
       //  System.debug('Multiply is::'+(s*i));     Error Because Static method can not be access non static variable
          
@@ -34,6 +35,7 @@ public with sharing class StaticPractice1 {
      
         System.debug('i am non Static Method1 and call from Static method');
         Static_Method();                                   // call for static method (No Error) we can Access static method from non static method
+		System.debug('test 2');
 
     }
 
